@@ -1,17 +1,17 @@
 body {
-	background-image:url("../img/bg.min.png");
+	background-image:url("../img/bg.min.jpg");
 	background-attachment:fixed;
 	background-size:cover;
 	background-position:center;
 	background-repeat:no-repeat;
 	background-color: white;
 	color: #ffffff;
-	font-family: "Segoe UI";
+    font-family: "Segoe UI", Arial, sans-serif;
 	margin: 0em;
 }
 .title {
     color: #2778ec;
-    font-family: "Segoe UI";
+    font-family: "Segoe UI", Arial, sans-serif;
     font-weight:200;
     font-size: 36pt;
     line-height:38pt;
@@ -21,6 +21,13 @@ body {
     margin-top:50px;
 }
 .mainContent {
+	background-image:url("../img/bgcolour.png");
+    padding-left:80px;
+    padding-right:80px;
+    max-width:720px;
+    margin: 80px auto;
+}
+.mainContent:hover {
 	background-image:url("../img/bgcolour.png");
     padding-left:80px;
     padding-right:80px;
@@ -41,7 +48,7 @@ body {
     padding-bottom: 10px;
 	padding-left: 12px;
 	padding-right: 12px;
-	font-family: "Segoe UI";
+    font-family: "Segoe UI", Arial, sans-serif;
 	font-size: 11pt;
 	font-weight: 600;
 	color: #FFFFFF;
@@ -78,7 +85,7 @@ strong {
 }
 a {
     color: #0066cc;
-    font-family: "Segoe UI";
+    font-family: "Segoe UI", Arial, sans-serif;
     font-size: 12pt;
     text-decoration: none;
     cursor: pointer;

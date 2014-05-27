@@ -1,13 +1,16 @@
 <!DOCTYPE html>
+<!--<html manifest="cache/index.appcache">-->
 <html>
     <head>
 	    <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="application-name" content="Wave"/>
+		<link rel="icon" type="image/png" href="img/favicon.png">
+		<link rel="next" href="index2.htm"/>
 		<title>WaveAPI</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-		<script type="text/javascript">
-var flipLayout=function(){if(window.parent.document.dir=="rtl"){document.getElementById("imageHolder").style.styleFloat="right";document.getElementById("imageHolder").style.marginRight="0px";document.getElementById("imageHolder").style.marginLeft="20px";document.getElementById("buttonHolder").style.textAlign="left"}}
-        </script>
+		<script type="text/javascript">var flipLayout=function(){if(window.parent.document.dir=="rtl"){document.getElementById("imageHolder").style.styleFloat="right";document.getElementById("imageHolder").style.marginRight="0px";document.getElementById("imageHolder").style.marginLeft="20px";document.getElementById("buttonHolder").style.textAlign="left"}}
+		</script>
     </head>
     <body onload="javascript:flipLayout()">
         <div id="contentContainer" class="mainContent">
@@ -16,7 +19,7 @@ var flipLayout=function(){if(window.parent.document.dir=="rtl"){document.getElem
             <div class="column1" id="column1">
                 <div>
                     <div id="imageHolder" style="float:left;margin-right:20px;">
-                        <img src="img/WaveMiniMetroLogo.png" width="128px" height="128px" alt="Wave mini logo" >
+                        <img src="img/WaveMiniMetroLogo.min.png" width="128px" height="128px" alt="Wave mini logo" >
                     </div>
                     <div id="messageHolder" class="normalText">
                      The WaveAPI makes the web <strong>epic</strong> by enabling
@@ -26,13 +29,14 @@ var flipLayout=function(){if(window.parent.document.dir=="rtl"){document.getElem
                 <br/>
                 <br/>
                 <div id="buttonHolder" style="clear:both; text-align:right;">
-                    <button id="yesPleaseButtonButton" class="defaultButton yesPleaseButton" onclick="javascript:window.location.href='index2.htm'">
-                    Find out more...</button>
-                    <button id="noThanksButton" class="defaultButton noThanksButton" onclick="javascript:window.close();">
-                    Close</button>
+					<button id="yesPleaseButtonButton" class="defaultButton yesPleaseButton" onclick="javascript:window.location.href='index2.htm'">
+					Find out more...</button>
+					<button id="noThanksButton" class="defaultButton noThanksButton" onclick="javascript:window.close();">
+					Close</button>
                     <br/>
                 </div>
             </div>
         </div>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
     </body>
 </html>
