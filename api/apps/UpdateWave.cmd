@@ -1,7 +1,7 @@
 @echo off
 SET BINDIR=%AppData%\Wave\libs
 CD /D "%BINDIR%"
-SET VerificationServ=https://paintninja.github.io/WaveAPI/api/auth
+SET VerificationServ=https://paintninja.github.io/Wave/api/auth
 Title=Wave updater
 if "%1"=="Update" (
 goto Update
@@ -30,15 +30,15 @@ exit
 REM Nothing here...
 )
 if not exist %TMP%\Wave\update mkdir %TMP%\Wave\update
-call wget.exe -q --directory-prefix=%TMP%\Wave\update --no-check-certificate --secure-protocol=auto %VerificationServ%/updates/latest.waveupdate
-if not exist latest.waveupdate (
+call wget.exe --directory-prefix=%TMP%\Wave\update --no-check-certificate --secure-protocol=auto %VerificationServ%/updates/latest.waveupdate
+if not exist %TMP%\Wave\update\latest.waveupdate (
 echo CRITICAL: latest.waveupdate download failed!
 pause
 exit
 ) else (
 echo All OK.
 )
-for /F "tokens=1-4* delims=," %%A in (latest.waveupdate) do (
+for /F "tokens=1-4* delims=," %%A in (%TMP%\Wave\update\latest.waveupdate) do (
    set _update-app-id=%%A
    set _update-priority=%%B
    set _update-type=%%C
@@ -50,13 +50,18 @@ echo CRITICAL: Error reading latest.waveupdate
 pause
 exit
 :Update2
+del /S /Q %TMP%\Wave\update\latest.waveupdate
 if "%_update-app-id%"=="" goto Error
 if "%_update-priority%"=="" goto Error
 if "%_update-type%"=="" goto Error
 if "%_update-version%"=="" goto Error
 if "%_update-dir%"=="" goto Error
 for %%i in (%_update-dir%.*) do set _update-fileext=%%~xi
-if "%_update-type%"=="core" call wget.exe -q --directory-prefix=%TMP%\Wave\update\core --no-check-certificate --secure-protocol=auto https://%_update-dir%
+rmdir /S /Q %TMP%\Wave\update\core
+rmdir /S /Q %TMP%\Wave\update\libs
+if not exist %TMP%\Wave\update\core mkdir %TMP%\Wave\update\core
+if not exist %TMP%\Wave\update\libs mkdir %TMP%\Wave\update\libs
+if "%_update-type%"=="core" call wget.exe --directory-prefix=%TMP%\Wave\update\core --no-check-certificate --secure-protocol=auto https://%_update-dir%
 if "%_update-type%"=="lib" call wget.exe -q --directory-prefix=%TMP%\Wave\update\libs --no-check-certificate --secure-protocol=auto https://%_update-dir%
 ::Latest.waveupdate format
 ::-------------------
@@ -79,7 +84,7 @@ if "%_update-type%"=="core" (
 set filename=Wave
 set fileextension=exe
 )
-if not exist %filename%.%fileextension% (
+if not exist %TMP%\Wave\Update\core\%filename%.%fileextension% (
 echo CRITICAL: %filename%.%fileextension% download failed!
 pause
 exit
