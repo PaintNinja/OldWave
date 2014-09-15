@@ -1,0 +1,12 @@
+Name: TestDev
+ID: 4
+Link: paintninja.github.io/Wave/api/apps/TestDev.cmd
+Algorithm: SHA1&&Size64
+MD5: 
+SHA1: BBEFD57A5317421A223940388DADC3D474DBBCEF
+SHA256: 
+# SHA384 is not supported because it has the same performance that SHA512 has, but is
+# less secure. You might as well go with better security for the same speed. :)
+SHA512: 
+Size64: 00000000000000BA
+State: norm
