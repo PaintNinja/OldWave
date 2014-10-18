@@ -3,10 +3,10 @@ title="Launching console..."
 if not exist "%AppData%\Wave" goto NoWave
 :Wave
 cls
-if not exist %AppData%\Microsoft\Windows\Start Menu\Programs\MineCenter\MineCenter.appref-ms (
+if not exist "%AppData%\Microsoft\Windows\Start Menu\Programs\MineCenter\MineCenter.appref-ms" (
   goto NotSetup
   ) else (
-  start /MAX %AppData%\Microsoft\Windows\Start Menu\Programs\MineCenter\MineCenter.appref-ms
+  start /MAX "" "%AppData%\Microsoft\Windows\Start Menu\Programs\MineCenter\MineCenter.appref-ms"
   exit
   )
 echo An unknown error occured
