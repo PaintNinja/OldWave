@@ -2,10 +2,10 @@
 SET VersionInteger=1.00
 SET Version=Stable v%VersionInteger%
 SET Title=CleanCache                                                        %Version%
-SET ErrorTitle=Calculate Error                                                  %Version%
+SET ErrorTitle=CleanCache Error                                                 %Version%
 SET TitleBar================================================================================
 SET SubTitleBar=-------------------------------------------------------------------------------
-Title=CalculateMD5 - %Version%
+Title=CleanCache - %Version%
 if "%1"=="" (
 goto Welcome
 ) else (
