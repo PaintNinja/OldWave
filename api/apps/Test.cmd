@@ -1,5 +1,5 @@
 @echo off
-title WaveAPI Test
+title Wave Test
 echo Test
 pause
 exit
