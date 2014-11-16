@@ -1,0 +1,17 @@
+v2
+---
++ Improved performance
+* Fixed the broken favicon
++ You can now change the 128px icon shown next to the text on the left to the webapp's icon
++ The transparent box effect now also applys on basic launches
++ There are now templates to ease the creation of WebLaunch for new AppIDs
++ Themed WebLaunches can now use JXR with a JPG fallback for even better performance on IE
++ Themed web launches can now change the background colour
++ Changed the title so that future versions of Wave can close the WebLaunch once launched
++ Added a one second delay before launching the webapp so that the page loads as the webapp launches (UX improvement)
+- Fully dropped support for IE8
+* The viewport is now 1.0 instead of 0.7 to fix scaling issues on some browsers and devices
+
+v1 - First version
+---
++ You can now launch Wave webapps easily from the web browser with a graceful fallback if the user doesn't have Wave installed

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="utf-8">
+		<meta http-equiv="refresh" content="0; url=Wave:,UpdateWave,8,Update" />
+		<meta name="viewport" content="width=device-width, initial-scale=0.7"/>
+		<meta name="application-name" content="Wave"/>
+		<meta name="msapplication-TileColor" content="#2980b9"/>
+		<link rel="icon" type="image/png" href="img/favicon.png">
+		<title>Wave WebLaunch</title>
+		<style>@font-face{font-weight:normal;font-style:normal;font-family:'SEGOEUIL';src:url('../fonts/SEGOEUIL.eot');src:local('SEGOEUIL'),url('../fonts/SEGOEUIL.woff')format('woff'),url('../fonts/SEGOEUIL.ttf')format('truetype')}body{background-attachment:fixed;background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#FFF;color:#fff;font-family:'SEGOEUIL'!important;margin:0}.title{color:#2778ec;font-family:'SEGOEUIL'!important;font-weight:200;font-size:36pt;line-height:38pt;margin-top:7px}.column1{margin-top:50px}.mainContent{background-image:url(../img/bgcolour.png);padding-left:80px;padding-right:80px;max-width:720px;margin:80px auto}.mainContent:hover{background-image:url(../img/bgcolour.png);padding-left:80px;padding-right:80px;max-width:720px;margin:80px auto}.normalText{color:#000;font:'SEGOEUIL'!important;font-weight:200;font-size:20pt;vertical-align:top;padding-right:0}.defaultButton{font-family:'SEGOEUIL'!important;font-size:11pt;font-weight:600;color:#FFF;min-width:32px;border-style:solid;padding:8px 12px 10px}.yesPleaseButton{background-color:#2A7DEE;margin-right:20px;border-color:#2A7DEE}.yesPleaseButton:hover{background-color:#5A94F1;border-color:#5A94F1}.yesPleaseButton:active{background-color:#000;border-color:#000}.noThanksButton{background-color:gray;border-color:gray}.noThanksButton:hover{background-color:#B3B6B6;border-color:#B3B6B6}.noThanksButton:active{background-color:#000;border-color:#000}strong{color:#0A316B;font-weight:bold}a{color:#06c;font-family:'SEGOEUIL'!important;font-size:12pt;text-decoration:none;cursor:pointer}a:hover{text-decoration:underline}</style>
+    </head>
+    <body onload="javascript:flipLayout()">
+        <div id="contentContainer" class="mainContent">
+            <h1 id="titleHeader" class="title" style="left: 0px; top: 0px;">
+             Wave WebLaunch</h1>
+            <div class="column1" id="column1">
+                <div>
+                    <div id="imageHolder" style="float:left;margin-right:20px;">
+                        <img src="../img/WaveMiniMetroLogo.min.png" width="128" height="128" alt="Wave mini logo">
+                    </div>
+                    <div id="messageHolder" class="normalText">
+                     If Wave is installed on your computer,
+					 "<code>UpdateWave</code>" will run with your
+					 permission.
+					 <p></p>
+					 If Wave isn't installed on your computer, please
+					 contact me (Paint_Ninja).</div>
+                </div>
+                <br/>
+                <br/>
+                <div id="buttonHolder" style="clear:both; text-align:right;">
+					<button id="yesPleaseButtonButton" class="defaultButton yesPleaseButton" onclick="javascript:window.location.href='8.html'">Retry</button>
+					<button id="noThanksButton" class="defaultButton noThanksButton" onclick="javascript:window.close();">Close</button>
+                    <br/>
+                </div>
+            </div>
+        </div>
+	</body>
+</html>
