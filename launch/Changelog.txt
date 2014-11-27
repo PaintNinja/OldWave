@@ -1,3 +1,10 @@
+v2.1
+---
+* Updated Wave logo to the new SVG-based logo that the v0.56 update brings
+- Removed some redundent code
++ Improved performance
++ OpenSans is now used as the font on launch pages, rather than the broken old font which fell back to an ugly serif font. (OpenSans is locally hosted for better privacy, with specially optimized WOFF2/WOFF/TTF formats)
+
 v2
 ---
 + Improved performance
