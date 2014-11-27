@@ -1,0 +1,95 @@
+@font-face {
+	font-family: OpenSans;
+	src: url('../fonts/opensans-regular.woff2') format('woff2'),
+	url('../fonts/opensans-regular.woff') format('woff'),
+	url('../fonts/opensans-regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: OpenSansLight;
+	src: url('../fonts/opensans-light.woff2') format('woff2'),
+	url('../fonts/opensans-light.woff') format('woff'),
+	url('../fonts/opensans-light.ttf') format('truetype');
+}
+body {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #FFF;
+    color: #fff;
+    font-family: OpenSans, sans-serif!important;
+    margin: 0;
+}
+.title {
+    color: #2778ec;
+    font-family: OpenSansLight, sans-serif!important;
+    font-weight: 200;
+    font-size: 36pt;
+    line-height: 38pt;
+    margin-top: 7px;
+}
+.column1 {
+    margin-top: 50px;
+}
+.mainContent {
+	background-color: rgba(235,240,240,0.5);
+    padding-left: 80px;
+    padding-right: 80px;
+    max-width: 720px;
+    margin: 80px auto;
+}
+.normalText {
+    color: #000;
+    font: OpenSans, sans-serif!important;
+    font-weight: 200;
+    font-size: 18pt;
+    vertical-align: top;
+    padding-right: 0;
+}
+.defaultButton {
+    font-family: OpenSans, sans-serif!important;
+    font-size: 11pt;
+    color: #FFF;
+    min-width: 32px;
+    border-style: solid;
+    padding: 8px 12px 10px;
+}
+.yesPleaseButton {
+    background-color: #2A7DEE;
+    margin-right: 20px;
+    border-color: #2A7DEE;
+}
+.yesPleaseButton:hover {
+    background-color: #5A94F1;
+    border-color: #5A94F1;
+}
+.yesPleaseButton:active {
+    background-color: #000;
+    border-color: #000;
+}
+.noThanksButton {
+    background-color: gray;
+    border-color: gray;
+}
+.noThanksButton:hover {
+    background-color: #B3B6B6;
+    border-color: #B3B6B6;
+}
+.noThanksButton:active {
+    background-color: #000;
+    border-color: #000;
+}
+strong {
+    color: #0A316B;
+    font-weight: bold;
+}
+a {
+    color: #06c;
+    font-family: OpenSans, sans-serif!important;
+    font-size: 12pt;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover {
+    text-decoration: underline;
+}
