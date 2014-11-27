@@ -1,12 +1,12 @@
 @echo off
-SET VersionInteger=1.00
+SET VersionInteger=1.05
 SET Version=Stable v%VersionInteger%
 SET Title=CalculateMD5                                                     %Version%
 SET ErrorTitle=Calculate Error                                                  %Version%
 SET TitleBar================================================================================
 SET SubTitleBar=-------------------------------------------------------------------------------
 Title=CalculateMD5 - %Version%
-call %AppData%\Wave\core\md5sums.exe -B -b -e -u %1.* >_file
+call %AppData%\Wave\core\md5sums.exe -b -e -u %1.* >_file
 for /F "tokens=1-2* delims= " %%A in (_file) do (
    set _md5=%%A
    set _filename=%%B
