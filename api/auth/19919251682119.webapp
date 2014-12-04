@@ -1,7 +1,8 @@
 Name: Sisyphus
 ID: 19919251682119
-Link: paintninja.github.io/Wave/api/apps/Sisyphus.exe
+Link: paintninja.github.io/Wave/api/apps/Sisyphus.7z
 Algorithm: SHA1
-SHA1: CF8D38B5C25696FA04F330A4C3A3B9FB61A0D5E3
-Compressed: No
+SHA1: 66DE4FA553CE738E0B54CC0815D29515B39868FB
+Compressed: Yes
+FileExt: exe
 State: norm
