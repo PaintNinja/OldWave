@@ -1,5 +1,5 @@
 @echo off
-SET VersionInteger=1.00
+SET VersionInteger=1.01
 SET Version=Stable v%VersionInteger%
 SET Title=CleanCache                                                        %Version%
 SET ErrorTitle=CleanCache Error                                                 %Version%
@@ -32,9 +32,9 @@ cls
 echo %Title% && echo %TitleBar%
 echo.
 echo Checking if %1 exists...
-if exist %AppData%\Wave\webapps\%1 (
+if exist %SystemDrive%\Wave\webapps\%1 (
 echo %1 exists. Cleaning its cache...
-rmdir /S /Q %AppData%\Wave\webapps\%1
+rmdir /S /Q %SystemDrive%\Wave\webapps\%1
 ) else (
 echo %1 doesn't exist!
 pause
@@ -46,8 +46,17 @@ cls
 echo %Title% && echo %TitleBar%
 echo.
 echo Cleaning the entire cache...
-rmdir /S /Q %AppData%\Wave\webapps
+rmdir /S /Q %SystemDrive%\Wave\webapps
 echo.
 echo Done!
 pause
 exit
+:Changelog
+exit
+v1.01
+---
+* Updated to work with Wave v0.58
+
+v1.00
+---
+First version

@@ -1,5 +1,9 @@
 @echo off
+if not exist "%AppData%\Wave\libs" (
+SET BINDIR=%SystemDrive%\Wave\libs"
+) else (
 SET BINDIR=%AppData%\Wave\libs
+)
 CD /D "%BINDIR%"
 SET VerificationServ=https://paintninja.github.io/Wave/api/auth
 Title=Wave updater
@@ -99,10 +103,23 @@ REM (Carry on)
 )
 
 :Update4
+if not exist "%AppData%\Wave" (
+goto Update4Alt
+)
 if "%_update-type%"=="core" del /S /Q %AppData%\Wave\core\%filename%.%fileextension%
 if "%_update-type%"=="lib" del /S /Q %AppData%\Wave\libs\%filename%.%fileextension%
 if "%_update-type%"=="core" robocopy "%TMP%\Wave\update\core" "%AppData%\Wave\core" /E
 if "%_update-type%"=="lib" robocopy "%TMP%\Wave\update\libs" "%AppData%\Wave\libs" /E
+
+echo Done!
+pause
+exit
+
+:Update4Alt
+if "%_update-type%"=="core" del /S /Q %SystemDrive%\Wave\core\%filename%.%fileextension%
+if "%_update-type%"=="lib" del /S /Q %SystemDrive%\Wave\libs\%filename%.%fileextension%
+if "%_update-type%"=="core" robocopy "%TMP%\Wave\update\core" "%SystemDrive%\Wave\core" /E
+if "%_update-type%"=="lib" robocopy "%TMP%\Wave\update\libs" "%SystemDrive%\Wave\libs" /E
 
 echo Done!
 pause

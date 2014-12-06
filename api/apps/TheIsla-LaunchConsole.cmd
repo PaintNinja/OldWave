@@ -12,7 +12,19 @@ if not exist "%AppData%\Microsoft\Windows\Start Menu\Programs\MineCenter\MineCen
 echo An unknown error occured
 pause
 exit
+:WaveAlt
+cls
+if not exist "%SystemDrive%\Microsoft\Windows\Start Menu\Programs\MineCenter\MineCenter.appref-ms" (
+  goto NotSetup
+  ) else (
+  start /MAX "" "%SystemDrive%\Microsoft\Windows\Start Menu\Programs\MineCenter\MineCenter.appref-ms"
+  exit
+  )
+echo An unknown error occured
+pause
+exit
 :NoWave
+if exist "%SystemDrive%\Wave" goto WaveAlt
 title="ERROR: Wave isn't installed!"
 cls
 echo Error: Wave isn't installed!
