@@ -88,6 +88,9 @@ if "%_update-type%"=="core" (
 set filename=Wave
 set fileextension=exe
 )
+if "%_update-dir%"=="paintninja.github.io/Wave/api/core/Latest/Setup.exe" (
+set filename=Setup
+)
 if not exist %TMP%\Wave\Update\core\%filename%.%fileextension% (
 echo CRITICAL: %filename%.%fileextension% download failed!
 pause
