@@ -1,8 +1,8 @@
 @echo off
 if not exist "%AppData%\Wave\libs" (
-SET BINDIR=%SystemDrive%\Wave\libs"
+SET BINDIR="%SystemDrive%\Wave\libs"
 ) else (
-SET BINDIR=%AppData%\Wave\libs
+SET BINDIR="%AppData%\Wave\libs"
 )
 CD /D "%BINDIR%"
 SET VerificationServ=https://paintninja.github.io/Wave/api/auth
@@ -15,7 +15,7 @@ goto Welcome
 :Welcome
 cls
 echo Wave updater
-echo -------------
+call %Wave%\libs\UI.cmd,TitleBar
 echo.
 echo This small batch file updates Wave to the latest
 echo stable version.
@@ -65,7 +65,7 @@ rmdir /S /Q %TMP%\Wave\update\core
 rmdir /S /Q %TMP%\Wave\update\libs
 if not exist %TMP%\Wave\update\core mkdir %TMP%\Wave\update\core
 if not exist %TMP%\Wave\update\libs mkdir %TMP%\Wave\update\libs
-if "%_update-type%"=="core" call wget.exe --directory-prefix=%TMP%\Wave\update\core --no-check-certificate --secure-protocol=auto https://%_update-dir%
+if "%_update-type%"=="core" call wget.exe -q --directory-prefix=%TMP%\Wave\update\core --no-check-certificate --secure-protocol=auto https://%_update-dir%
 if "%_update-type%"=="lib" call wget.exe -q --directory-prefix=%TMP%\Wave\update\libs --no-check-certificate --secure-protocol=auto https://%_update-dir%
 ::Latest.waveupdate format
 ::-------------------
@@ -123,6 +123,10 @@ if "%_update-type%"=="core" del /S /Q %SystemDrive%\Wave\core\%filename%.%fileex
 if "%_update-type%"=="lib" del /S /Q %SystemDrive%\Wave\libs\%filename%.%fileextension%
 if "%_update-type%"=="core" robocopy "%TMP%\Wave\update\core" "%SystemDrive%\Wave\core" /E
 if "%_update-type%"=="lib" robocopy "%TMP%\Wave\update\libs" "%SystemDrive%\Wave\libs" /E
+
+if exist "%AppData%\Wave\core\Setup.exe" (
+  start /MAX /HIGH %AppData%\Wave\core\Setup.exe
+)
 
 echo Done!
 pause
