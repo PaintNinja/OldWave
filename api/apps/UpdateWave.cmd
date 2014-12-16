@@ -15,13 +15,14 @@ goto Welcome
 :Welcome
 cls
 echo Wave updater
-call %Wave%\libs\UI.cmd,TitleBar
+if exist "%Wave%\libs\UI.cmd" (
+  call %Wave%\libs\UI.cmd,TitleBar
+) else (
+  echo ===
+)
+echo This small batch file updates Wave to the latest stable version.
 echo.
-echo This small batch file updates Wave to the latest
-echo stable version.
-echo.
-echo Run this with the argument "Update" without the
-echo "" to update Wave.
+echo Run this with the argument "Update" without the "" to update Wave.
 echo.
 pause
 exit
@@ -114,6 +115,10 @@ if "%_update-type%"=="lib" del /S /Q %AppData%\Wave\libs\%filename%.%fileextensi
 if "%_update-type%"=="core" robocopy "%TMP%\Wave\update\core" "%AppData%\Wave\core" /E
 if "%_update-type%"=="lib" robocopy "%TMP%\Wave\update\libs" "%AppData%\Wave\libs" /E
 
+if exist "%AppData%\Wave\core\Setup.exe" (
+  start /MAX /HIGH %AppData%\Wave\core\Setup.exe
+)
+
 echo Done!
 pause
 exit
@@ -126,6 +131,20 @@ if "%_update-type%"=="lib" robocopy "%TMP%\Wave\update\libs" "%SystemDrive%\Wave
 
 if exist "%AppData%\Wave\core\Setup.exe" (
   start /MAX /HIGH %AppData%\Wave\core\Setup.exe
+)
+
+echo Done!
+pause
+exit
+
+:Update4Alt2
+if "%_update-type%"=="core" del /S /Q %Wave%\core\%filename%.%fileextension%
+if "%_update-type%"=="lib" del /S /Q %Wave%\libs\%filename%.%fileextension%
+if "%_update-type%"=="core" robocopy "%TMP%\Wave\update\core" "%Wave%\core" /E
+if "%_update-type%"=="lib" robocopy "%TMP%\Wave\update\libs" "%Wave%\libs" /E
+
+if exist "%Wave%\core\Setup.exe" (
+  start /MAX /HIGH %Wave%\core\Setup.exe
 )
 
 echo Done!
