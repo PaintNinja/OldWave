@@ -1,10 +1,8 @@
 @echo off
-SET VersionInteger=1.01
+SET VersionInteger=1.02
 SET Version=Stable v%VersionInteger%
 SET Title=CleanCache                                                        %Version%
 SET ErrorTitle=CleanCache Error                                                 %Version%
-SET TitleBar================================================================================
-SET SubTitleBar=-------------------------------------------------------------------------------
 Title=CleanCache - %Version%
 if "%1"=="" (
 goto Welcome
@@ -13,8 +11,8 @@ goto CleanCache
 )
 :Welcome
 cls
-echo %Title% && echo %Titlebar%
-echo.
+echo %Title%
+call %Wave%\libs\UI.cmd,TitleBar
 echo This tiny Wave webapp cleans the cache for a specific webapp, or all webapps
 echo if you like. 
 echo.
@@ -29,12 +27,12 @@ exit
 :CleanCache
 if "%1"=="-all" goto CleanAllCache
 cls
-echo %Title% && echo %TitleBar%
-echo.
+echo %Title%
+call %Wave%\libs\UI.cmd,TitleBar
 echo Checking if %1 exists...
-if exist %SystemDrive%\Wave\webapps\%1 (
+if exist %Wave%\webapps\%1 (
 echo %1 exists. Cleaning its cache...
-rmdir /S /Q %SystemDrive%\Wave\webapps\%1
+rmdir /S /Q %Wave%\webapps\%1
 ) else (
 echo %1 doesn't exist!
 pause
@@ -43,16 +41,20 @@ exit
 exit
 :CleanAllCache
 cls
-echo %Title% && echo %TitleBar%
-echo.
+echo %Title%
+call %Wave%\libs\UI.cmd,TitleBar
 echo Cleaning the entire cache...
-rmdir /S /Q %SystemDrive%\Wave\webapps
+rmdir /S /Q %Wave%\webapps
 echo.
 echo Done!
 pause
 exit
 :Changelog
 exit
+v1.02
+---
+* Updated to fully support and make use of Wave v0.59
+- Dropped support for older Wave versions
 v1.01
 ---
 * Updated to work with Wave v0.58

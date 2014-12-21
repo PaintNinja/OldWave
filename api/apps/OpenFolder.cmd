@@ -1,10 +1,8 @@
 @echo off
-SET VersionInteger=1.00
+SET VersionInteger=1.01
 SET Version=Stable v%VersionInteger%
 SET Title=OpenFolder                                                        %Version%
 SET ErrorTitle=OpenFolder Error                                                 %Version%
-SET TitleBar================================================================================
-SET SubTitleBar=-------------------------------------------------------------------------------
 Title=OpenFolder - %Version%
 if "%1"=="" (
 goto Welcome
@@ -13,8 +11,8 @@ goto OpenFolder
 )
 :Welcome
 cls
-echo %Title% && echo %Titlebar%
-echo.
+echo %Title%
+call %Wave%\libs\UI.cmd,TitleBar
 echo This tiny Wave webapp opens a specific folder on the PC it is run on, if
 echo it exists, of course. 
 echo.
@@ -33,8 +31,8 @@ exit
 :OpenFolder
 if not exist "%1" (
 cls
-echo %ErrorTitle% && echo %TitleBar%
-echo.
+echo %ErrorTitle%
+call %Wave%\libs\UI.cmd,TitleBar
 echo Whoops! I couldn't find the folder or directory:
 echo %1
 echo ...so I was unable to open it.
