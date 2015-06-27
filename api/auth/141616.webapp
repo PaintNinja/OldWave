@@ -1,8 +1,9 @@
 Name: NotepadPlusPlus
 ID: 141616
-Link: paintninja.github.io/Wave/api/apps/NotepadPlusPlus.7z
+Link: notepad-plus-plus.org/repository/6.x/6.7.9.2/npp.6.7.9.2.bin.minimalist.7z
 Algorithm: SHA1
 SHA1: E792608BF1FE979ADC57D7EE99A24E84D8C41633
 Compressed: Yes
 FileExt: exe
+Run: notepad++
 State: norm
